@@ -18,7 +18,7 @@
 Ваш уровень: 2 """
 
 score = int(input('Введите колличество очков:  '))
-level = 1
+level = 0
 
 if score >= 1000:
     level += 1
