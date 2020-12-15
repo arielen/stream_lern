@@ -6,3 +6,13 @@
 
 Напишите программу, которая определяет значение наибольшего элемента последовательности
 (последовательность заканчивается при вводе нуля). """
+
+temperature = int(input('Введите температуру: '))
+max_temperature = temperature
+
+while temperature != 0:
+    if max_temperature < temperature:
+        max_temperature = temperature
+    temperature = int(input('Введите температуру: '))
+
+print(f'Наибольшая температура составляет: {max_temperature}')

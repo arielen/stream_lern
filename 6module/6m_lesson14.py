@@ -9,3 +9,16 @@
 
 Дополнительно: сделайте так, чтобы можно было гарантированно угадать число за семь попыток. """
 
+number = int(input('Компьютер хочет проверить число: '))
+answer = 0
+count = 0
+
+while answer != 1:
+    count += 1
+    print(f'Твое число равно, меньше или больше, чем число {number}?')
+    answer = int(input('1 — равно, 2 — больше, 3 — меньше '))
+    if answer == 2:
+        number += number / 2
+    if answer == 3:
+        number -= number / 2
+    print(f'Ваше число: {int(number)}. Колличество попыток: {count}')

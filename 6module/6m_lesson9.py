@@ -14,3 +14,16 @@
 Введите число: 0
 Кол-во положительных чисел: 1
 Кол-во отрицательных чисел: 2 """
+
+number = int(input('Введите число: '))
+positive = 0
+negative = 0
+
+while number != 0:
+    if number > 0:
+        positive += 1
+    else:
+        negative += 1
+    number = int(input('Введите число: '))
+
+print(f'Кол-во положительных чисел: {positive}', f'Кол-во отрицательных чисел: {negative}', sep='\n')

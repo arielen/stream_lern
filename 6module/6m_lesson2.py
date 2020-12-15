@@ -12,3 +12,9 @@
 2
 1
 0 """
+
+seconds = int(input('Сколько секунд ждать ? '))
+
+while seconds >= 0:
+    print(seconds)
+    seconds -= 1

@@ -5,3 +5,21 @@
 К примеру, билеты 666 666 и 252 135 — счастливые, а 123 456 — нет.
 Подумайте, нужны ли для решения этой задачи циклы? """
 
+number = int(input('Введите число: '))
+left = number // 1000
+right = number % 1000
+
+for summ_left in range(1):
+    while left != 0:
+        summ_left += left % 10
+        left //= 10
+
+for summ_right in range(1):
+    while right != 0:
+        summ_right += right % 10
+        right //= 10
+
+if summ_right == summ_left:
+    print('Билет счастливый')
+else:
+    print('Билет не счастливый')

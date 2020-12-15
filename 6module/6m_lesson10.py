@@ -36,3 +36,21 @@
 Рабочий день закончился. Всего выполнено задач: 21
 Нужно зайти в магазин """
 
+print('Начался 8-часовой рабочий день')
+hour = 0
+product = False
+task_all = 0
+
+while hour < 8:
+    hour += 1
+    print(f'{hour} час')
+    task = int(input('Сколько задач решит Максим? '))
+    bell = int(input('Звонит муж. Взять трубку? '))
+    if bell == 1:
+        product = True
+    task_all += task
+
+print(f'Рабочий день закончился. Всего выполнено задач: {task_all}')
+
+if product is True:
+    print('Нужно зайти в магазин')

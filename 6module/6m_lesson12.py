@@ -5,3 +5,13 @@
 Напишите программу, которая по данным числам X, Y, P определяет,
 сколько лет пройдёт, прежде чем сумма достигнет значения Y. """
 
+contribution = int(input('Введите вклад:  '))
+percent = int(input('Введите процент:  '))
+summ = int(input('Сумма накоплений: '))
+year = 0
+
+while contribution < summ:
+    year += 1
+    contribution += contribution * percent/100
+
+print(f'Пройдет {year} лет, прежде чем сумма достигнет значения: {summ}')
