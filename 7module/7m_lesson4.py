@@ -11,3 +11,11 @@ print(' /  V  \  ')
 print('/(  _  )\ ')
  print('  ^^ ^^   ') """
 
+n = int(input('Сколько пингвинов вывести? '))
+
+for pingiunus in range(1, n + 1):
+    print('   _~_    ')
+    print('  (o o)   ')
+    print(' /  V  \  ')
+    print('/(  _  )\ ')
+    print('  ^^ ^^   ')

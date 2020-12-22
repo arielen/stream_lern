@@ -7,3 +7,18 @@
 
 Пользователь вводит 10 чисел. Напишите программу, которая определяет,
 сколько из них являются одновременно четными и положительными. """
+
+massive = []
+count = 0
+count_even = 0  # количество положительных
+
+while count < 10:
+    count += 1
+    number = int(input(f'Введите число {count}:  '))
+    massive.append(number)
+
+for number in massive:
+    if number % 2 == 0 and number > 0:
+        count_even += 1
+
+print(f'Одновременно четными и положительными, являются {count_even} чисел')
