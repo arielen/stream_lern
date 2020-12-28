@@ -5,3 +5,15 @@
 Составьте программу расчета суммы денег, которую необходимо получить у родителей один раз в начале обучения,
 чтобы можно было прожить учебный год (10 месяцев), используя только эти деньги и стипендию. """
 
+educational_grant = int(input('Стипендия: '))
+expenses = int(input('Расходы: '))
+procentel = 3  # кроме первого месяца
+total_sum = 0
+
+for mounth in range(1, 11):
+    sum_mount = educational_grant - expenses  # сумма трат в месяц
+    expenses += expenses * (procentel / 100)  # рост цен
+    total_sum += sum_mount
+
+print(
+    f'Для того чтобы прожить {mounth} месяцев - студенту понадобятся, дополнительные: {"%.2f" % abs(total_sum)} рублей')

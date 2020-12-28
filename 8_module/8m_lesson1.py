@@ -7,3 +7,11 @@
 два и так далее, пока она не закончится. Используйте цикл for.
 """
 
+buckwheats = 100
+mounth = 0
+
+for buckwheat in range(buckwheats - 4, 0, -4):
+    mounth += 1
+    print(f'Через {mounth} месяц, гречки останется: {buckwheat}')
+
+print(f'Очень жаль, но через {mounth + 1} месяцев - гречка закончится!')

@@ -19,3 +19,12 @@
 Сколько должны? 2000
 Общая сумма долга: 8000 """
 
+debtors = int(input('Введите количество должников: '))
+sum_must = 0
+
+for debtor in range(0, debtors + 1, 5):
+    print(f'Должник с номером {debtor}')
+    must = int(input('Сколько должны? '))
+    sum_must += must
+
+print(f'Общая сумма долга: {sum_must}')
