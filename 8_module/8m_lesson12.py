@@ -4,19 +4,17 @@
 #(x-2)(x-4)(x-8) * ... * (x-64)
 """
 
-# странное задание, если только x не меньше 64 или является отрицательным
+# при некоторых числах, таких как 2, 4, 8 - возникает ошибка, но если быть точнее, то значение (2,4,8,16) вычитает себя
+# на определенной итерации и при перемножении вся сумма равна 0.
 
 x = int(input('Введите значение X: '))
 sum_number_up = 1
 sum_number_down = 1
 
-for number in range(1, 64, 2):
-    sum_number_up *= x - number
-    print(number, sum_number_up)
-
-for number in range(2, 64 + 1, 2):
-    sum_number_down *= x - number
-    print(number, sum_number_down)
+for number in range(1, 6 + 1):
+    sum_number_up *= x - 2 ** number - 1
+    sum_number_down *= x - 2 ** number
+    print(number)
 
 S = sum_number_up / sum_number_down
 
