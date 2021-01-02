@@ -6,8 +6,7 @@ S = 1 - (1/2) + (1/4) - (1/8) + ... + (-1)**N * (1/(2**N))
 N = int(input('Введите число: '))
 S = 0
 
-for number in range(0, N + 1):
-    S += (-1)**number * (1/2**number)
-    print(S)
+for number in range(0, N):
+    S += (-1) ** number * (1 / 2 ** number)
 
 print(f'Ваша сумма равна: {S}')

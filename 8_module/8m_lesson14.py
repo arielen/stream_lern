@@ -47,25 +47,22 @@ else:
     maximum = 'g'
     minimum = 'b'
 
-print(maximum, end='')
-maximum_count -= 1
-
-while maximum_count != 0:
-    if minimum_count <= 0:
-        print('error')
-        break
-    elif minimum_count == maximum_count:
-        print(minimum, maximum, end='')
-        minimum_count -= 1
-        maximum_count -= 1
-        continue
-    elif maximum_count > minimum_count:
-        print(minimum, end='')
-        minimum_count -= 1
-        print(maximum * 2, end='')
-        maximum_count -= 2
-
-
+if maximum_count > minimum_count * 2:
+    print('error')
+else:
+    print(maximum, end='')
+    maximum_count -= 1
+    while maximum_count != 0:
+        if minimum_count == maximum_count:
+            print(minimum + maximum, end='')
+            minimum_count -= 1
+            maximum_count -= 1
+            continue
+        elif maximum_count > minimum_count:
+            print(minimum, end='')
+            minimum_count -= 1
+            print(maximum * 2, end='')
+            maximum_count -= 2
 
 """if boys / girls <= 2:
     for number in range(1, boys + 1):

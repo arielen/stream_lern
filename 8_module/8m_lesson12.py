@@ -12,7 +12,7 @@ sum_number_up = 1
 sum_number_down = 1
 
 for number in range(1, 6 + 1):
-    sum_number_up *= x - 2 ** number - 1
+    sum_number_up *= x - (2 ** number + 1)
     sum_number_down *= x - 2 ** number
     print(number)
 
