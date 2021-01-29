@@ -7,3 +7,19 @@
 
 Пользователь вводит строку из 10 символов a и b.
 Необходимо определить, сколько в итоге будет произведено молока за день. """
+
+text = input('Введите строку: ')
+stall = 1
+milk = 0
+
+for letter in text:
+    if letter.lower() == 'a':
+        milk += stall * 2
+    elif letter.lower() == 'b':
+        pass
+    else:
+        print(f'Символ неверный: {letter}')
+        continue
+    stall += 1
+
+print(f'Всего молока: {milk}')

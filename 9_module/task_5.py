@@ -17,3 +17,26 @@
 [Программа]: Марсоход находится на позиции 5, 20, введите команду:
 [Оператор]: W
 [Программа]: Марсоход находится на позиции 5, 20, введите команду: """
+
+room = [8, 10]
+
+while True:
+    step = input(f'[Программа]: Марсоход находится на позиции {room[0]}, {room[1]}, введите команду:')
+    if step.lower() == 'a':
+        if room[0] == 0:
+            continue
+        room[0] -= 1
+    elif step.lower() == 'd':
+        if room[0] == 15:
+            continue
+        room[0] += 1
+    elif step.lower() == 'w':
+        if room[1] == 20:
+            continue
+        room[1] += 1
+    elif step.lower() == 's':
+        if room[1] == 0:
+            continue
+        room[1] -= 1
+    else:
+        print('Команда не принята!')

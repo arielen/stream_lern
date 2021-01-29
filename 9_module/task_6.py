@@ -8,3 +8,19 @@
 Пример:
 Введите строку: ssbbbsssbc
 Самая длинная последовательность: 3 """
+
+text = input('Введите строку: ')
+previousLetter = ''
+count = 0
+max_count = 0
+
+for letter in text:
+    if letter.lower() == 's':
+        count += 1
+    elif letter.lower() != 's':
+        count = 0
+    if count > max_count:
+        max_count = count
+    previousLetter = letter
+
+print(f'Самая длинная последовательность: {max_count}')

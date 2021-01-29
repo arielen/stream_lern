@@ -9,3 +9,17 @@
 Пример:
 Введите текст: Меня зовут Петр
 Длина самого длинного слова: 5 """
+
+text = input('Введите текст: ')
+count = 0
+max_count = 0
+
+for length in text:
+    if length != ' ':
+        count += 1
+    else:
+        count = 0
+    if count > max_count:
+        max_count = count
+
+print(f'Длина самого длинного слова: {max_count}')
