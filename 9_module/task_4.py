@@ -10,6 +10,5 @@ seats = int(input('Введите кол-во сидений:  '))
 meters = int(input('Введите кол-во сободных метров:  '))
 
 print('Сцена')
-for theatr in range(0, row):
-    print('=' * seats, end='*' * meters)
-    print('=' * seats)
+for number_row in range(row):
+    print('=' * seats, '*' * meters, '=' * seats, sep=' ')

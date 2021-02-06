@@ -22,21 +22,13 @@ room = [8, 10]
 
 while True:
     step = input(f'[Программа]: Марсоход находится на позиции {room[0]}, {room[1]}, введите команду:')
-    if step.lower() == 'a':
-        if room[0] == 0:
-            continue
+    if step.lower() == 'a' and room[0] != 0:
         room[0] -= 1
-    elif step.lower() == 'd':
-        if room[0] == 15:
-            continue
+    elif step.lower() == 'd' and room[0] != 15:
         room[0] += 1
-    elif step.lower() == 'w':
-        if room[1] == 20:
-            continue
+    elif step.lower() == 'w' and room[1] != 20:
         room[1] += 1
-    elif step.lower() == 's':
-        if room[1] == 0:
-            continue
+    elif step.lower() == 's' and room[1] != 0:
         room[1] -= 1
     else:
         print('Команда не принята!')
