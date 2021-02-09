@@ -5,17 +5,10 @@
 N = int(input('Введите число: '))
 
 for row in range(N):
-    number = N
-    number_right = -N
-    for col in range(N * 2):
-        if col <= row:
-            print(number, end='')
-        elif col / 2 - 1 == abs(number_right + row):
-            print(abs(number_right), end='')
-            number_right -= 1
-            break
-        else:
-            print('.', end='')
-        number -= 1
-
+    for number_left in range(N, N - row - 1, -1):
+        print(number_left, end='')
+    dot_count = number_left * 2 - 2
+    print('.' * (dot_count), end='')
+    for number_right in range(number_left, N + 1):
+        print(number_right, end='')
     print()

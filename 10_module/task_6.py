@@ -7,4 +7,4 @@ new_N = 0
 for fact in range(1, N + 1):
     new_N += fact
 
-print(new_N)
+print(f'Сумма факториала числа {N} = {new_N}')
