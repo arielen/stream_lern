@@ -3,8 +3,10 @@
 
 N = int(input('Введите число: '))
 new_N = 0
+fact_number = 1
 
 for fact in range(1, N + 1):
-    new_N += fact
+    fact_number *= fact
+    new_N += fact_number
 
-print(f'Сумма факториала числа {N} = {new_N}')
+print(f'Факториал числа {N} = {new_N}')
