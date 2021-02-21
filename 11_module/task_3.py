@@ -19,3 +19,17 @@
 Прошло 3 сек. Скачано 81 из 123 Мб (66%)
 Прошло 4 сек. Скачано 108 из 123 Мб (88%)
 Прошло 5 сек. Скачано 123 из 123 Мб (100%) """
+import math
+
+files = int(input('Укажите размер файла для скачивания: '))
+speed = int(input('Какова скорость вашего интернета? '))
+second = 0
+
+for megabytes in range(speed, files+speed, speed):
+    second += 1
+    if megabytes >= files:
+        print(f'Прошло {second} сек. Скачано {files} из {files} Мб (100%)')
+        break
+    procent = math.ceil((megabytes / files)*100)
+    print(f'Прошло {second} сек. Скачано {megabytes} из {files} Мб ({procent}%)')
+

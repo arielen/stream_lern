@@ -17,3 +17,13 @@ x = 2   log(x) = 0.6931471805599453
 x = -3   exp(x) = 0.049787068367863944
 Введите число: -5.9
 x = -6   exp(x) = 0.0024787521766663585 """
+import math
+
+N = int(input('Введите кол-во чисел: '))
+
+for num in range(N):
+    number = float(input('Введите число: '))
+    if number > 0:
+        print(f'x = {math.ceil(number)}, log({math.ceil(number)}) = {math.log(math.ceil(number))}')
+    else:
+        print(f'x = {math.floor(number)}, exp({math.floor(number)}) = {math.exp(math.floor(number))}')
