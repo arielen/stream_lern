@@ -8,3 +8,8 @@
 Введите первое число: 10
 Введите второе число: 5
 Наибольшее число: 10 """
+
+first_number = float(input('Введите первое число: '))
+second_number = float(input('Введите второе число: '))
+
+print(f'Максимальное число: {max(first_number, second_number)}')

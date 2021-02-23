@@ -5,4 +5,5 @@
 import math
 
 x = float(input('Введите действительное число: '))
+
 print(int((x - math.floor(x)) * 10))

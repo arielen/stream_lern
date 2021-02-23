@@ -13,3 +13,34 @@
 0.068
 Конь в клетке (0, 1). Точка в клетке (2, 0).
 Да, конь может ходить в эту точку. """
+
+import math
+
+while True:
+    try:
+        print('Введите местоположение коня: ')
+        x = float(input())
+        y = float(input())
+        print('Введите местоположение на доске: ')
+        x_desire = float(input())
+        y_desire = float(input())
+
+        if (0 >= int(x * 10) <= 7) or (0 >= int(y * 10) <= 7) or (0 >= int(x_desire * 10) <= 7) or (
+                0 >= int(y_desire * 10) <= 7):
+            print(
+                f'Конь в клетке ({int(x * 10)}, {int(y * 10)}). Точка в клетке ({int(x_desire * 10)}, {int(y_desire * 10)}).')
+
+            if int(math.fabs((int(x * 10) + int(y * 10)) - (int(x_desire * 10) + int(y_desire * 10)))) == 3 or int(
+                    math.fabs((int(x * 10) + int(y * 10)) - (int(x_desire * 10) + int(y_desire * 10)))) == 1:
+                print('Да, конь может ходить в эту точку')
+            else:
+                print('Конь не можнт ходить в этом направлении!')
+            break
+
+        else:
+            print(
+                f'Ваши данные ({int(x * 10)}, {int(y * 10)}). Точка в клетке ({int(x_desire * 10)}, {int(y_desire * 10)}). Шахматная доска размером от 0-7',
+                f'Введите корректные данные!', sep='\n')
+
+    except ValueError:
+        print('Вы ввели не число. Введите корректные данные!')

@@ -20,11 +20,13 @@
 
 import math
 
-Earth = 10.8321 * 1011  # объем земли
+radius = float(input('Введите радиус случайной планеты: '))
+Earth = 10.8321 * 10 ** 11  # объем земли
+V_planet = 4 / 3 * math.pi * radius ** 3  # объем случайной планеты
 
-radius_planet = float(input('Введите радиус случайной планеты: '))
-
-V_planet = 4 / 3 * math.pi * radius_planet ** 3
-print(V_planet)
-
-print(f'Объем планеты земля больше в {Earth / V_planet}')
+if Earth > V_planet:
+    print(f'Объем планеты земля больше в {round((Earth / V_planet), 3)} раз')
+elif Earth == V_planet:
+    print('Объемы планет одинаковы!')
+else:
+    print(f'Объём планеты Земля меньше в (1/{round((Earth / V_planet), 3)}) = {round((V_planet / Earth), 3)} раз')

@@ -21,3 +21,15 @@ C   F
 20  68
 40  104
 50  122 """
+
+down = int(input('Нижняя граница: '))
+up = int(input('Верхняя граница: '))
+step = int(input('Шаг: '))
+
+print('C', 'F', sep='\t')
+for gradus in range(down, up, step):
+    farengates = 1.8 * gradus + 32
+    if gradus == 0:
+        farengates = 32
+    print(gradus, int(farengates), sep='\t')
+print(up, int(up * 1.8 + 32), sep='\t')
