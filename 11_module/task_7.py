@@ -25,13 +25,18 @@ while True:
         x_desire = float(input())
         y_desire = float(input())
 
-        if (0 >= int(x * 10) <= 7) or (0 >= int(y * 10) <= 7) or (0 >= int(x_desire * 10) <= 7) or (
-                0 >= int(y_desire * 10) <= 7):
-            print(
-                f'Конь в клетке ({int(x * 10)}, {int(y * 10)}). Точка в клетке ({int(x_desire * 10)}, {int(y_desire * 10)}).')
+        x_sharp = int(x * 10)
+        y_sharp = int(y * 10)
+        x_des_sharp = int(x_desire * 10)
+        y_des_sharp = int(y_desire * 10)
 
-            if int(math.fabs((int(x * 10) + int(y * 10)) - (int(x_desire * 10) + int(y_desire * 10)))) == 3 or int(
-                    math.fabs((int(x * 10) + int(y * 10)) - (int(x_desire * 10) + int(y_desire * 10)))) == 1:
+        if (0 >= x_sharp <= 0.7) or (0 >= y_sharp <= 0.7) or (0 >= x_des_sharp <= 0.7) or (
+                0 >= y_des_sharp <= 0.7):
+            print(
+                f'Конь в клетке ({x_sharp}, {y_sharp}). Точка в клетке ({x_des_sharp}, {y_des_sharp}).')
+
+            if math.fabs((x_sharp + y_sharp) - (x_des_sharp + y_des_sharp)) == 3 or math.fabs(
+                    (x_sharp + y_sharp) - (x_des_sharp + y_des_sharp)) == 1:
                 print('Да, конь может ходить в эту точку')
             else:
                 print('Конь не можнт ходить в этом направлении!')
@@ -39,7 +44,7 @@ while True:
 
         else:
             print(
-                f'Ваши данные ({int(x * 10)}, {int(y * 10)}). Точка в клетке ({int(x_desire * 10)}, {int(y_desire * 10)}). Шахматная доска размером от 0-7',
+                f'Ваши данные ({x_sharp}, {y_sharp}). Точка в клетке ({x_des_sharp}, {y_des_sharp}). Шахматная доска размером от 0-7',
                 f'Введите корректные данные!', sep='\n')
 
     except ValueError:

@@ -12,4 +12,6 @@
 first_number = float(input('Введите первое число: '))
 second_number = float(input('Введите второе число: '))
 
-print(f'Максимальное число: {max(first_number, second_number)}')
+hold_number = (abs(first_number - second_number) + (first_number + second_number)) / 2
+
+print(f'Максимальное число: {int(hold_number)}')
