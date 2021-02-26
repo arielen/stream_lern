@@ -14,38 +14,27 @@
 Конь в клетке (0, 1). Точка в клетке (2, 0).
 Да, конь может ходить в эту точку. """
 
-import math
-
 while True:
-    try:
-        print('Введите местоположение коня: ')
-        x = float(input())
-        y = float(input())
-        print('Введите местоположение на доске: ')
-        x_desire = float(input())
-        y_desire = float(input())
+    print('Введите местоположение коня: ')
+    x = float(input())
+    y = float(input())
+    print('Введите местоположение на доске: ')
+    x_desire = float(input())
+    y_desire = float(input())
 
-        x_sharp = int(x * 10)
-        y_sharp = int(y * 10)
-        x_des_sharp = int(x_desire * 10)
-        y_des_sharp = int(y_desire * 10)
+    x = int(x * 10)
+    y = int(y * 10)
+    x_desire = int(x_desire * 10)
+    y_desire = int(y_desire * 10)
 
-        if (0 >= x_sharp <= 0.7) or (0 >= y_sharp <= 0.7) or (0 >= x_des_sharp <= 0.7) or (
-                0 >= y_des_sharp <= 0.7):
-            print(
-                f'Конь в клетке ({x_sharp}, {y_sharp}). Точка в клетке ({x_des_sharp}, {y_des_sharp}).')
-
-            if math.fabs((x_sharp + y_sharp) - (x_des_sharp + y_des_sharp)) == 3 or math.fabs(
-                    (x_sharp + y_sharp) - (x_des_sharp + y_des_sharp)) == 1:
-                print('Да, конь может ходить в эту точку')
-            else:
-                print('Конь не можнт ходить в этом направлении!')
-            break
-
+    print(f'Конь в клетке ({x}, {y}). Точка в клетке ({x_desire}, {y_desire}).')
+    if (7 >= x >= 0) and (7 >= y >= 0) and (7 >= x_desire >= 0) and (7 >= y_desire >= 0):
+        x_fear = abs(x - x_desire)  # получаем значение разницы по Ox
+        y_fear = abs(y - y_desire)  # получаем значение разницы по Oy
+        if (x_fear == 2 and y_fear == 1) or (x_fear == 1 and y_fear == 2):
+            print('Да, конь может ходить в эту точку')
         else:
-            print(
-                f'Ваши данные ({x_sharp}, {y_sharp}). Точка в клетке ({x_des_sharp}, {y_des_sharp}). Шахматная доска размером от 0-7',
-                f'Введите корректные данные!', sep='\n')
-
-    except ValueError:
-        print('Вы ввели не число. Введите корректные данные!')
+            print('Конь не может ходить в этом направлении!')
+        break
+    else:
+        print('Введите корректные данные!')
