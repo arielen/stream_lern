@@ -1,5 +1,6 @@
 print('Задача 3. Апгрейд калькулятора')
 
+
 # Степан, как и большая часть населения планеты,
 # для расчёта суммы и разности чисел использует калькулятор.
 # 
@@ -17,3 +18,51 @@ print('Задача 3. Апгрейд калькулятора')
 # 
 # Каждое действие оформите в виде отдельной функции, 
 # а основную программу зациклите.
+
+def sumNumber(N):
+    summ = 0
+    while N != 0:
+        summ += N % 10
+        N //= 10
+    print(f'Сумма его чисел: {summ}')
+
+
+def maxNumber(N):
+    maxima = 0
+    while N != 0:
+        number = N % 10
+        if number > maxima:
+            maxima = number
+        N //= 10
+    print(f'Максимальное число: {maxima}')
+
+
+def minNumber(N):
+    minima = 9
+    while N != 0:
+        number = N % 10
+        if number < minima:
+            minima = number
+        N //= 10
+    print(f'Минимальное число: {minima}')
+
+
+def toDo():
+    N = int(input('Введите число: '))
+    choice = int(input('Что сделует с ним сделать?\n'
+                       '1 - вывести сумму его цифр\n'
+                       '2 - вывести максимальную цифру\n'
+                       '3 - вывести минимальную цифру. \n'
+                       'Действие: '))
+    if choice == 1:
+        sumNumber(N)
+    elif choice == 2:
+        maxNumber(N)
+    elif choice == 3:
+        minNumber(N)
+    else:
+        print('Ошибка. Выберите вариант выполнения операции!')
+
+
+while True:
+    toDo()
