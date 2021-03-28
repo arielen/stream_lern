@@ -1,5 +1,6 @@
 print('Задача 10. Аннуитетный платёж')
 
+
 # Кредит в сумме S млн руб.,
 # выданный на n лет под i% годовых,
 # подлежит погашению равными ежегодными выплатами в конце каждого года,
@@ -75,3 +76,48 @@ print('Задача 10. Аннуитетный платёж')
 # Выплачено тела кредита: 4992937.125723703
 # 
 # Остаток долга: 0.017039266414940357
+
+def exponent(num, degree):
+    exponent = num
+    for n in range(degree - 1):
+        exponent *= num
+    return exponent
+
+
+def annuinity_payment(S, i, n):
+    i /= 100
+    K = (i * exponent(1 + i, n)) / (exponent(1 + i, n) - 1)
+    A = K * S
+    return round(A, 2)
+
+
+def periods(S, i, n, count):
+    for period in range(1, count):
+        print(f'Период: {period}')
+        A = annuinity_payment(S, i, n)
+        paidout = S * i / 100
+        credit = A - paidout
+        print(f'Остаток долга на начало периода: {S}')
+        print(f'Выплачено процентов: {paidout}')
+        print(f'Выплачено тело кредита: {credit}\n')
+        S -= credit
+        n -= 1
+    print(f'Остаток долга: {S}\n')
+    return S
+
+
+credit = float(input('Введите сумму кредита: '))
+year = int(input('На сколько лет выдан: '))
+percent = int(input('Сколько процентов годовых? '))
+print()
+
+credit = periods(credit, percent, year, 4)
+year -= 3
+
+print(' ====================== \n')
+year2 = int(input('На сколько продляется договор? '))
+year += year2
+percent2 = int(input('Увеличение ставки до: '))
+print()
+
+credit = periods(credit, percent2, year, year + 1)
