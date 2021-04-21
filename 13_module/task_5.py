@@ -14,13 +14,13 @@ import math as m
 
 accuracy = float(input('Точность: '))
 
-num = 0
-number = 0
+e = 0
+n = 0
+num = 1
 
-# не нашел варианта как это сделать при 1e-5 = 0.00001, только до тех пор пока не будет равен 100к((
-while accuracy < 100000:
-    number += 1 / m.factorial(num)
-    num += 1
-    accuracy *= 10
+while num > accuracy:
+    num = 1 / m.factorial(n)
+    e += num
+    n += 1
 
-print(f'Результат: {number}')
+print(f'Результат: {e}')
